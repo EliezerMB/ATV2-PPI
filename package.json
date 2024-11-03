@@ -1,0 +1,31 @@
+{
+  "name": "atv2-ppi",
+  "version": "1.0.0",
+  "description": "ATV2-PPI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliezerMB/ATV2-PPI.git"
+  },
+  "author": "Eliezer M.Barbosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EliezerMB/ATV2-PPI/issues"
+  },
+  "homepage": "https://github.com/EliezerMB/ATV2-PPI#readme",
+  "keywords": [
+    "HTTP",
+    "POST",
+    "Javascript",
+    "Node",
+    "Express"
+  ],
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
