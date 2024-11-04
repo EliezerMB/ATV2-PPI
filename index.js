@@ -17,14 +17,14 @@ function addComida(req, resp){
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    <div class = "Container text-center">
    <h1> Cadastro de Pratros</h1>
-    <form class="row g-3"novalidate>
+    <form class="row g-3" novalidate>
     <div class="col-md-4">
     <label for="Nome do Prato" class="form-label">Nome do Prato</label>
     <input type="text" class="form-control" id="nome" value="nome" placeholder="Exemplo:Arroz Carreteiro" required>
     </div>
 
     <div class="col-md-4">
-    <label for="Região Tipica" class="form-label">Região Tipica</label>
+    <label for=" Região" class="form-label">Região Tipica</label>
     <input type="text" class="form-control" id="Rgiao" value="Regiao" placeholder="Exemplo:Centro-Oeste e Nordeste" required>
   </div>
 
@@ -48,7 +48,7 @@ function addComida(req, resp){
         `);
 }
 
-app.get(`/Cadastro De Comida`,addComida);
+app.get(`/cadastro`,addComida);
 
 
 app.listen(porta,host,() =>{
