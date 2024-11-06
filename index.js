@@ -1,5 +1,6 @@
 import express from "express";
 const app = express();
+app.use(express.urlencoded({ extended: true}));
 const porta = 3000;
 const host = "0.0.0.0";
 
@@ -24,7 +25,7 @@ function addComida(req, resp){
 
     <div class="col-md-4">
     <label for=" Região" class="form-label">Região Tipica</label>
-    <input type="text" class="form-control" id="Rgiao" value="Regiao" placeholder="Exemplo:Centro-Oeste e Nordeste" required>
+    <input type="text" class="form-control" id="Regiao" value="Regiao" placeholder="Exemplo:Centro-Oeste e Nordeste" required>
   </div>
 
   <div class="col-md-4">
