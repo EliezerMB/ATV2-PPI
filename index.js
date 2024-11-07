@@ -51,8 +51,6 @@ function addComida(req, resp){
 
 function menu(req , resp){
     resp.send(` 
-
- html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
