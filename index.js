@@ -20,11 +20,11 @@ function addComida(req, resp){
     <form class="row g-3" novalidate>
     <div class="col-md-4">
     <label for="Nome do Prato" class="form-label">Nome do Prato</label>
-    <input type="text" class="form-control" id="nome" value="nome" placeholder="Exemplo:Arroz Carreteiro" required>
+    <input type="text" class="form-control" id="nome" value="sela" placeholder="Exemplo:Arroz Carreteiro" required>
     </div>
 
     <div class="col-md-4">
-    <label for=" Região" class="form-label">Região Tipica</label>
+    <label for="Região" class="form-label">Região Tipica</label>
     <input type="text" class="form-control" id="Regiao" value="Regiao" placeholder="Exemplo:Centro-Oeste e Nordeste" required>
   </div>
 
