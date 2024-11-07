@@ -93,7 +93,7 @@ function cadastrodeComidas(req, resp){
     listaComida.push(comida);
 
 
-    resp.send(`
+    resp.write(`
             <html>
                 <head>
                     <title>Lista De Comidas Cadastradas</title>
