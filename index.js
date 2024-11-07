@@ -112,7 +112,7 @@ function cadastrodeComidas(req, resp){
                     </thead>
                     <tbody>`);
 
-                    for (var i = 0; i > listaComida.length; i++){
+                    for (var i = 0; i < listaComida.length; i++){
                         resp.write(`<tr>
                                         <td>${listaComida[i].nome}</td>
                                         <td>${listaComida[i].regiao}</td>
