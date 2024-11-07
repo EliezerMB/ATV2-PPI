@@ -137,7 +137,7 @@ function cadastrodeComidas(req, resp){
 app.get(`/`,menu);
 app.get(`/cadastro`,addComida);
 
-app.post('/cadastro',cadastrodeComidas);
+app.post(`/cadastro`,cadastrodeComidas);
 
 app.listen(porta,host,() =>{
     console.log(`Servidor inicializado e em Execusao no Endereço http://${host}:${porta}`)
