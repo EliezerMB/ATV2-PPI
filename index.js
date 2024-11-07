@@ -88,52 +88,51 @@ function cadastrodeComidas(req, resp){
     const regiao    = req.body.regiao;
     const horario   = req.body.horario;
     const estacao   = req.body.estacao;
-};
 
 
-const comida = {nome, regiao, horario, estacao};
+    const comida = {nome, regiao, horario, estacao};
 
-listaComida.push(comida);
+    listaComida.push(comida);
 
 
-resp.send(`
-        <html>
-            <head>
-                <title>Lista De Comidas Cadastradas</title>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-                <meta charset="utf-8">
-            </head>
-            <body>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Regiao</th>
-                        <th scope="col">Horario</th>
-                        <th scope="col">Estacao</th>
-                    </tr>
-                </thead>
-                <tbody>`);
-                for (var i = 0; i < listaComida.length; i++){
-                    resp.write(`<tr>
-                                    <td>${listaComida[i].nome}</td>
-                                    <td>${listaComida[i].regiao}</td>
-                                    <td>${listaComida[i].horario}</td>
-                                    <td>${listaComida[i].estacao}</td>
-                                </tr>
-                        `);
-                }
+    resp.send(`
+            <html>
+                <head>
+                    <title>Lista De Comidas Cadastradas</title>
+                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+                    <meta charset="utf-8">
+                </head>
+                <body>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Regiao</th>
+                            <th scope="col">Horario</th>
+                            <th scope="col">Estacao</th>
+                        </tr>
+                    </thead>
+                    <tbody>`);
+                    for (var i = 0; i < listaComida.length; i++){
+                        resp.write(`<tr>
+                                        <td>${listaComida[i].nome}</td>
+                                        <td>${listaComida[i].regiao}</td>
+                                        <td>${listaComida[i].horario}</td>
+                                        <td>${listaComida[i].estacao}</td>
+                                    </tr>
+                            `);
+}
+}
+        resp.write(`</tbody> 
+                </table>
+                <a class="btn btn-primary" href="/cadastro">Continuar Cadastrando</a>
+                <a class="btn btn-secondary" href="/">Voltar para o Menu</a>
+                </body>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+            </html>
+                `);
 
-    resp.write(`</tbody> 
-            </table>
-            <a class="btn btn-primary" href="/cadastro">Continuar Cadastrando</a>
-            <a class="btn btn-secondary" href="/">Voltar para o Menu</a>
-            </body>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        </html>
-            `);
-
-    resp.end();
+        resp.end();
 
 
 
