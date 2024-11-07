@@ -113,6 +113,7 @@ function cadastrodeComidas(req, resp){
                         </tr>
                     </thead>
                     <tbody>`);
+
                     for (var i = 0; i < listaComida.length; i++){
                         resp.write(`<tr>
                                         <td>${listaComida[i].nome}</td>
@@ -121,20 +122,19 @@ function cadastrodeComidas(req, resp){
                                         <td>${listaComida[i].estacao}</td>
                                     </tr>
                             `);
-}
-}
-        resp.write(`</tbody> 
+                        }
+
+        resp.write(`
+                </tbody> 
                 </table>
                 <a class="btn btn-primary" href="/cadastro">Continuar Cadastrando</a>
                 <a class="btn btn-secondary" href="/">Voltar para o Menu</a>
                 </body>
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-            </html>
-                `);
+            </html>`);
 
         resp.end();
-
-
+}
 
 app.get(`/`,menu);
 app.get(`/cadastro`,addComida);
