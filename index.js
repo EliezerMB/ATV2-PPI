@@ -3,7 +3,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true}));
 const porta = 3000;
 const host = "0.0.0.0";
-
+var listaComida = [];
 
 function addComida(req, resp){
     resp.send(`
@@ -20,22 +20,22 @@ function addComida(req, resp){
     <form class="row g-3" novalidate>
     <div class="col-md-4">
     <label for="Nome do Prato" class="form-label">Nome do Prato</label>
-    <input type="text" class="form-control" id="nome" value="sela" placeholder="Exemplo:Arroz Carreteiro" required>
+    <input type="text" class="form-control" id="nome" placeholder="Exemplo:Arroz Carreteiro" required>
     </div>
 
     <div class="col-md-4">
     <label for="Região" class="form-label">Região Tipica</label>
-    <input type="text" class="form-control" id="Regiao" value="Regiao" placeholder="Exemplo:Centro-Oeste e Nordeste" required>
+    <input type="text" class="form-control" id="regiao" placeholder="Exemplo:Centro-Oeste e Nordeste" required>
   </div>
 
   <div class="col-md-4">
     <label for="Melhor Horario Para o consumo" class="form-label">Melhor Horario Para o consumo</label>
-    <input type="text" class="form-control" id="horario" value="horario" placeholder="Exemplo:Cafe da Manha - Almoço - Jantar - Ceia" required>
+    <input type="text" class="form-control" id="horario" placeholder="Exemplo:Cafe da Manha - Almoço - Jantar - Ceia" required>
   </div>
 
   <div class="col-md-6">
     <label for="Estação" class="form-label">Melhor Estacao para o consumo</label>
-    <input type="text" class="form-control" id="estacao" value="estacao" placeholder="Exemplo:Inverno" required>
+    <input type="text" class="form-control" id="estacao" placeholder="Exemplo:Inverno" required>
   </div>
 
   <div class="col-12">
@@ -57,7 +57,7 @@ function menu(req , resp){
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Cadastro de Comida :-)</title>
-    <from method="POST" action="/cadastro" 
+    <form method="POST" action="/cadastro"> 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -137,6 +137,7 @@ function cadastrodeComidas(req, resp){
 app.get(`/`,menu);
 app.get(`/cadastro`,addComida);
 
+app.post('/cadastro', cadastrodeComidas);
 
 app.listen(porta,host,() =>{
     console.log(`Servidor inicializado e em Execusao no Endereço http://${host}:${porta}`)
