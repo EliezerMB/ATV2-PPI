@@ -3,7 +3,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true}));
 const porta = 3000;
 const host = "0.0.0.0";
-var listaComida = [];
+const listaComida = [];
 
 
 function menu(req , resp){
